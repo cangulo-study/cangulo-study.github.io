@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v4
 
       - name: Prepare statics
+        working-directory: frontend
         run: |
           # Build the project
           npm run build
@@ -27,7 +28,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build'
+          path: 'frontend/build'
 
   deploy:
     needs: build
