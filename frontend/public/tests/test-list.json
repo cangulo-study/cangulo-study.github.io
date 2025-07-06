@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Set 1",
+        "filename": "set1.json",
+        "difficulty": "easy"
+    },
+    {
+        "name": "Set 2",
+        "filename": "set2.json",
+        "difficulty": "easy"
+    },
+    {
+        "name": "Set 3",
+        "filename": "set3.json",
+        "difficulty": "easy"
+    },
+    {
+        "name": "Set 4",
+        "filename": "set4.json",
+        "difficulty": "intermediate"
+    },
+    {
+        "name": "Set 5",
+        "filename": "set5.json",
+        "difficulty": "intermediate"
+    },
+    {
+        "name": "Set 6",
+        "filename": "set6.json",
+        "difficulty": "hard"
+    },
+    {
+        "name": "Set 7",
+        "filename": "set7.json",
+        "difficulty": "hard"
+    }
+]

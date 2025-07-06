@@ -1,0 +1,335 @@
+{
+    "difficulty": "easy",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What does the `docker image prune` command do?",
+            "options": {
+                "a": "Removes all containers",
+                "b": "Deletes all unused volumes",
+                "c": "Removes dangling images",
+                "d": "Cleans up system logs"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 2,
+            "question": "Which flag is used to name a container?",
+            "options": {
+                "a": "--id",
+                "b": "--name",
+                "c": "--tag",
+                "d": "--label"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 3,
+            "question": "What does `docker-compose up -d` do?",
+            "options": {
+                "a": "Builds and runs containers in the foreground",
+                "b": "Builds only",
+                "c": "Runs containers in detached mode",
+                "d": "Deletes previous builds"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 4,
+            "question": "Where are Docker named volumes stored by default?",
+            "options": {
+                "a": "/etc/docker/volumes",
+                "b": "/usr/var/volumes",
+                "c": "/var/lib/docker/volumes",
+                "d": "/home/docker/volumes"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 5,
+            "question": "Which Dockerfile instruction sets a build-time variable?",
+            "options": {
+                "a": "ENV",
+                "b": "ARG",
+                "c": "RUN",
+                "d": "CMD"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 6,
+            "question": "What is the role of the `CMD` instruction in a Dockerfile?",
+            "options": {
+                "a": "Runs before build",
+                "b": "Runs as the container's default command",
+                "c": "Installs dependencies",
+                "d": "Defines the container name"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 7,
+            "question": "What is the default network scope of Docker Compose services?",
+            "options": {
+                "a": "Global",
+                "b": "Bridge",
+                "c": "Host",
+                "d": "Custom overlay"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 8,
+            "question": "What command removes **unused** data from your Docker host?",
+            "options": {
+                "a": "docker clean",
+                "b": "docker system prune",
+                "c": "docker reset",
+                "d": "docker tidy"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 9,
+            "question": "How do you list all Docker networks?",
+            "options": {
+                "a": "docker network list",
+                "b": "docker net ls",
+                "c": "docker network ls",
+                "d": "docker ls networks"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 10,
+            "question": "What does a Dockerfile’s `ENTRYPOINT` define?",
+            "options": {
+                "a": "The volume mount location",
+                "b": "Network policy",
+                "c": "Base image",
+                "d": "Main executable at container start"
+            },
+            "correctOption": "d"
+        },
+        {
+            "id": 11,
+            "question": "What command builds an image and tags it at once?",
+            "options": {
+                "a": "docker image build",
+                "b": "docker build -t myimage:latest .",
+                "c": "docker tag build myimage",
+                "d": "docker compose build"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 12,
+            "question": "Which file defines the default location of Docker's image cache?",
+            "options": {
+                "a": "/etc/docker/cache.json",
+                "b": "/var/run/docker.sock",
+                "c": "There is no single config file; it’s in /var/lib/docker",
+                "d": "~/.docker/cache.yaml"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 13,
+            "question": "Which of the following is **not** a valid Docker object?",
+            "options": {
+                "a": "Image",
+                "b": "Network",
+                "c": "Node",
+                "d": "Registry"
+            },
+            "correctOption": "d"
+        },
+        {
+            "id": 14,
+            "question": "Which log driver is default on most Linux systems?",
+            "options": {
+                "a": "fluentd",
+                "b": "none",
+                "c": "json-file",
+                "d": "syslog"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 15,
+            "question": "How do you stop and remove containers and networks created with Compose?",
+            "options": {
+                "a": "docker-compose delete",
+                "b": "docker-compose reset",
+                "c": "docker-compose down",
+                "d": "docker-compose stop"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 16,
+            "question": "What is `docker context` used for?",
+            "options": {
+                "a": "Managing image versions",
+                "b": "Connecting to remote Docker engines",
+                "c": "Filtering log output",
+                "d": "Building context folders"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 17,
+            "question": "What happens if a container’s main process crashes?",
+            "options": {
+                "a": "It continues running",
+                "b": "Docker daemon reboots it",
+                "c": "It exits with a non-zero status",
+                "d": "It's removed automatically"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 18,
+            "question": "Which of these commands creates a new volume?",
+            "options": {
+                "a": "docker volume new",
+                "b": "docker create volume",
+                "c": "docker volume create",
+                "d": "docker volume start"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 19,
+            "question": "What is the primary benefit of overlay networks in Swarm?",
+            "options": {
+                "a": "Encrypt volumes",
+                "b": "Share images across nodes",
+                "c": "Connect services across hosts",
+                "d": "Accelerate container boot times"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 20,
+            "question": "What is `docker export` used for?",
+            "options": {
+                "a": "Share logs between containers",
+                "b": "Export container as a tar archive",
+                "c": "Export volume data",
+                "d": "Convert image to Dockerfile"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 21,
+            "question": "What command would show the layers of a Docker image?",
+            "options": {
+                "a": "docker image layers",
+                "b": "docker show",
+                "c": "docker history",
+                "d": "docker image inspect"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 22,
+            "question": "What option ensures a container always restarts?",
+            "options": {
+                "a": "--start-always",
+                "b": "--restart always",
+                "c": "--keep-running",
+                "d": "--persist true"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 23,
+            "question": "What happens when you change a Dockerfile and re-run `docker build`?",
+            "options": {
+                "a": "All layers are reused",
+                "b": "The build fails",
+                "c": "Only unchanged layers are cached",
+                "d": "The image is ignored"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 24,
+            "question": "What is the `.dockerignore` file used for?",
+            "options": {
+                "a": "Ignoring bad volumes",
+                "b": "Excluding files from build context",
+                "c": "Blocking containers from running",
+                "d": "Cleaning cache"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 25,
+            "question": "Which storage driver is **commonly used by default** on most Linux distros?",
+            "options": {
+                "a": "aufs",
+                "b": "overlay2",
+                "c": "devicemapper",
+                "d": "zfs"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 26,
+            "question": "What does `docker run -p 8080:80` do?",
+            "options": {
+                "a": "Exposes port 8080 in the container",
+                "b": "Maps host port 8080 to container port 80",
+                "c": "Maps container port 8080 to host 80",
+                "d": "Enables SSH"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 27,
+            "question": "How do you specify a custom Dockerfile name?",
+            "options": {
+                "a": "docker build -n Customfile",
+                "b": "docker run -f Customfile",
+                "c": "docker build -f Customfile .",
+                "d": "docker compile Customfile"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 28,
+            "question": "What does `docker-compose logs` do?",
+            "options": {
+                "a": "Shows logs of running Compose services",
+                "b": "Lists all volumes",
+                "c": "Starts all services",
+                "d": "Deletes logs"
+            },
+            "correctOption": "a"
+        },
+        {
+            "id": 29,
+            "question": "What is the purpose of a `.env` file in Docker Compose?",
+            "options": {
+                "a": "Store image tags",
+                "b": "Define environment variables used in the Compose file",
+                "c": "Create networks",
+                "d": "Encrypt secrets"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 30,
+            "question": "What does the `docker logout` command do?",
+            "options": {
+                "a": "Logs you out of Docker Hub",
+                "b": "Shuts down the Docker engine",
+                "c": "Logs you out of the shell",
+                "d": "Removes all credentials from your image"
+            },
+            "correctOption": "a"
+        }
+    ]
+}

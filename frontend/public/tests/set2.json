@@ -1,0 +1,335 @@
+{
+    "difficulty": "easy",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What does the `docker ps` command show?",
+            "options": {
+                "a": "Running containers",
+                "b": "Container logs",
+                "c": "Docker images",
+                "d": "Volumes"
+            },
+            "correctOption": "a"
+        },
+        {
+            "id": 2,
+            "question": "Which file is used by default when running `docker-compose`?",
+            "options": {
+                "a": "compose.yaml",
+                "b": "dockerfile.yml",
+                "c": "docker-compose.yml",
+                "d": "compose.json"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 3,
+            "question": "How do you stop and remove all running containers at once?",
+            "options": {
+                "a": "docker remove --all",
+                "b": "docker rm $(docker ps)",
+                "c": "docker stop $(docker ps -q) && docker rm $(docker ps -aq)",
+                "d": "docker down"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 4,
+            "question": "Which Dockerfile instruction sets an environment variable?",
+            "options": {
+                "a": "RUN",
+                "b": "EXPOSE",
+                "c": "ENV",
+                "d": "ARG"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 5,
+            "question": "What is a multi-stage build used for?",
+            "options": {
+                "a": "Running multiple containers",
+                "b": "Creating temporary volumes",
+                "c": "Reducing final image size",
+                "d": "Adding labels"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 6,
+            "question": "Which command builds a Docker image from a Dockerfile?",
+            "options": {
+                "a": "docker build .",
+                "b": "docker run",
+                "c": "docker start",
+                "d": "docker make"
+            },
+            "correctOption": "a"
+        },
+        {
+            "id": 7,
+            "question": "Which component is responsible for scheduling tasks in Swarm?",
+            "options": {
+                "a": "Worker node",
+                "b": "Control plane",
+                "c": "Service proxy",
+                "d": "Ingress router"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 8,
+            "question": "How do you attach to a running container’s shell?",
+            "options": {
+                "a": "docker login",
+                "b": "docker attach <container_id>",
+                "c": "docker shell <container_id>",
+                "d": "docker run -i"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 9,
+            "question": "How do you delete **all** stopped containers?",
+            "options": {
+                "a": "docker container stop --all",
+                "b": "docker system prune -a",
+                "c": "docker rm $(docker ps -a -q)",
+                "d": "docker down"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 10,
+            "question": "What is the main benefit of using named volumes?",
+            "options": {
+                "a": "They're faster",
+                "b": "They're more secure",
+                "c": "They persist across container runs",
+                "d": "They use less disk"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 11,
+            "question": "What does `EXPOSE 80` in a Dockerfile do?",
+            "options": {
+                "a": "Opens port 80 on the host",
+                "b": "Makes port 80 available to link to other containers",
+                "c": "Routes traffic from the internet",
+                "d": "Enables TLS"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 12,
+            "question": "What does the `docker-compose build` command do?",
+            "options": {
+                "a": "Starts the containers",
+                "b": "Rebuilds services defined in the Compose file",
+                "c": "Deletes containers",
+                "d": "Initializes a network"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 13,
+            "question": "How can you tag a Docker image?",
+            "options": {
+                "a": "docker label image:v1",
+                "b": "docker add tag",
+                "c": "docker tag image newtag",
+                "d": "docker create tag"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 14,
+            "question": "What is a service in Docker Swarm?",
+            "options": {
+                "a": "A user account",
+                "b": "A layer in an image",
+                "c": "A group of replicated containers",
+                "d": "A Dockerfile"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 15,
+            "question": "What is a replica in Swarm?",
+            "options": {
+                "a": "A backup of a volume",
+                "b": "A snapshot of an image",
+                "c": "An instance of a service",
+                "d": "A log entry"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 16,
+            "question": "How can you see logs of a container?",
+            "options": {
+                "a": "docker logs <container_id>",
+                "b": "docker ps logs",
+                "c": "docker exec logs",
+                "d": "docker-compose inspect logs"
+            },
+            "correctOption": "a"
+        },
+        {
+            "id": 17,
+            "question": "Which flag in `docker run` mounts a volume?",
+            "options": {
+                "a": "--attach",
+                "b": "-m",
+                "c": "-v",
+                "d": "--link"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 18,
+            "question": "What is the default base image for many Linux-based Docker images?",
+            "options": {
+                "a": "busybox",
+                "b": "alpine",
+                "c": "scratch",
+                "d": "ubuntu"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 19,
+            "question": "What does `docker history` show?",
+            "options": {
+                "a": "Deleted containers",
+                "b": "Size of volumes",
+                "c": "Image layer details",
+                "d": "Registry access logs"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 20,
+            "question": "Which file defines environment variables for Docker Compose?",
+            "options": {
+                "a": ".env",
+                "b": "docker-compose.env",
+                "c": "dockerfile",
+                "d": ".composevars"
+            },
+            "correctOption": "a"
+        },
+        {
+            "id": 21,
+            "question": "What happens when you restart Docker engine?",
+            "options": {
+                "a": "All containers are deleted",
+                "b": "Stopped containers remain stopped",
+                "c": "All containers start automatically",
+                "d": "Volumes are reset"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 22,
+            "question": "What command pulls an image without running it?",
+            "options": {
+                "a": "docker create",
+                "b": "docker download",
+                "c": "docker pull",
+                "d": "docker fetch"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 23,
+            "question": "Which option allows a container to use the host network?",
+            "options": {
+                "a": "--host",
+                "b": "--network host",
+                "c": "--link host",
+                "d": "--share host"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 24,
+            "question": "Which command removes an image?",
+            "options": {
+                "a": "docker delete image",
+                "b": "docker rmi",
+                "c": "docker remove",
+                "d": "docker clean"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 25,
+            "question": "What happens if you remove a container using a named volume?",
+            "options": {
+                "a": "Volume is deleted",
+                "b": "Volume remains intact",
+                "c": "All data is lost",
+                "d": "Container fails to stop"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 26,
+            "question": "How do you restart a container?",
+            "options": {
+                "a": "docker reboot <id>",
+                "b": "docker stop <id> && docker start <id>",
+                "c": "docker recreate <id>",
+                "d": "docker powercycle <id>"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 27,
+            "question": "What is the ENTRYPOINT in a Dockerfile?",
+            "options": {
+                "a": "A comment",
+                "b": "Default executable when container starts",
+                "c": "Name of the image",
+                "d": "Log path"
+            },
+            "correctOption": "b"
+        },
+        {
+            "id": 28,
+            "question": "Which type of mount provides the most isolation from the host?",
+            "options": {
+                "a": "Bind mount",
+                "b": "Named volume",
+                "c": "tmpfs",
+                "d": "Overlay network"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 29,
+            "question": "What does `docker diff` do?",
+            "options": {
+                "a": "Shows version changes in the image",
+                "b": "Lists container log differences",
+                "c": "Shows file system changes in a container",
+                "d": "Compares image sizes"
+            },
+            "correctOption": "c"
+        },
+        {
+            "id": 30,
+            "question": "What is the function of `docker login`?",
+            "options": {
+                "a": "Starts a container with a password",
+                "b": "Logs in to a Docker registry",
+                "c": "Opens a secure shell in a container",
+                "d": "Adds 2FA to Docker commands"
+            },
+            "correctOption": "b"
+        }
+    ]
+}

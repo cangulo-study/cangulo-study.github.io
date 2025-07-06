@@ -1,0 +1,16 @@
+{
+    "difficulty": "easy",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What does the `docker pull` command do?",
+            "options": {
+                "a": "Builds a container from a Dockerfile",
+                "b": "Pulls logs from a container",
+                "c": "Downloads an image from a registry",
+                "d": "Pushes an image to Docker Hub"
+            },
+            "correctOption": "c"
+        }
+    ]
+}
