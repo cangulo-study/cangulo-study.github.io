@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { TestResultState, AnsweredQuestion } from '../Models/Question';
+import { TestResultState } from '../Models/Question';
 
 
 export default function TestResult() {

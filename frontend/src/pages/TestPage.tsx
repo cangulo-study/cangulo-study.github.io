@@ -9,7 +9,7 @@ export default function TestPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [filename, setFilename] = useState<string | null>(null);
+  // const [filename, setFilename] = useState<string | null>(null);
   // Removed showPopup and reviewMode
   const [answers, setAnswers] = useState<AnsweredQuestion[]>([]);
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export default function TestPage() {
         .then((list) => {
           const idx = parseInt(testnumber, 10) - 1;
           if (idx >= 0 && idx < list.length) {
-            setFilename(list[idx].filename);
+            // setFilename(list[idx].filename);
             fetch(`/tests/${list[idx].filename}`)
               .then((res) => res.json())
               .then(setTest);
