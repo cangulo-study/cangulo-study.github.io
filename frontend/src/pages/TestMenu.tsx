@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TestMenu.css';
-import { TestItem } from '../Models/Question';
+import { TestItem } from '../models/Question';
 
 export default function TestMenu() {
   const [tests, setTests] = useState<TestItem[]>([]);

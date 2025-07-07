@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { Question, AnsweredQuestion } from '../Models/Question';
+import { Question, AnsweredQuestion } from '../models/Question';
 
 export default function TestReview() {
   const location = useLocation();

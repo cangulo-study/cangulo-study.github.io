@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { AnsweredQuestion, Question } from '../Models/Question';
+import { AnsweredQuestion, Question } from '../models/Question';
 
 export default function TestPage() {
   const { setId } = useParams<{ setId: string }>();
