@@ -38,7 +38,7 @@ export default function TestReview() {
 
   return (
     <div style={{ maxWidth: 800, margin: '2rem auto', background: '#fff', padding: 24, borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-      <h2>Review Answers</h2>
+      <h2>Review your answers</h2>
       <div style={{ marginBottom: 24, display: 'flex', gap: 16 }}>
         <button onClick={() => testnumber ? navigate(`/test/${testnumber}`) : navigate('/')}>Back to Test</button>
         <button onClick={() => navigate('/result', { state })}>Send the answers</button>

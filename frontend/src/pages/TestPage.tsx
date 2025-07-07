@@ -162,7 +162,7 @@ export default function TestPage() {
         )}
         {/* Mark for review indicator and instructions */}
         <div style={{ marginTop: 12, color: '#888', fontSize: 14 }}>
-          <span>Press <b>R</b> to mark/unmark this question for review. {answers[current]?.toReview ? <b style={{ color: '#c00' }}>Marked for review</b> : ''}</span>
+          <span>Press <b>r</b> to mark/unmark this question for review. {answers[current]?.toReview ? <b style={{ color: '#c00' }}>Marked for review</b> : ''}</span>
         </div>
       </>}
     </div>
