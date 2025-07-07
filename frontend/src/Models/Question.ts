@@ -11,21 +11,8 @@ export interface AnsweredQuestion {
   toReview: boolean;
 }
 
-export interface TestData {
-  difficulty: string;
-  questions: Question[];
-}
-
-export interface TestResultState {
+export interface TestReviewState {
   questions: Question[];
   answers: AnsweredQuestion[];
-  score?: number;
-  testnumber?: string;
-}
-
-export interface TestItem {
-  id: number;
-  name: string;
-  filename: string;
-  difficulty: string;
+  setId: string;
 }

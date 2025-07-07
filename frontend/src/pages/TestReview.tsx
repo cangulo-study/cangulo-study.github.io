@@ -1,24 +1,18 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { Question, AnsweredQuestion } from '../models/Question';
+import { TestReviewState } from '../models/Question';
 
 export default function TestReview() {
   const location = useLocation();
   const navigate = useNavigate();
-  // Use a local TestReviewState interface for state
-  interface TestReviewState {
-    questions: Question[];
-    answers: AnsweredQuestion[];
-    testnumber?: string;
-  }
   const state = location.state as TestReviewState | undefined;
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        if (state && state.testnumber) {
-          navigate(`/test/${state.testnumber}`);
+        if (state && state.setId) {
+          navigate(`/test/${state.setId}`);
         } else {
           navigate('/');
         }
@@ -34,13 +28,13 @@ export default function TestReview() {
     return <div>No review data. <button onClick={() => navigate('/')}>Back to Menu</button></div>;
   }
 
-  const { questions, answers, testnumber } = state;
+  const { questions, answers, setId } = state;
 
   return (
     <div style={{ maxWidth: 800, margin: '2rem auto', background: '#fff', padding: 24, borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
       <h2>Review your answers</h2>
       <div style={{ marginBottom: 24, display: 'flex', gap: 16 }}>
-        <button onClick={() => testnumber ? navigate(`/test/${testnumber}`) : navigate('/')}>Back to Test</button>
+        <button onClick={() => setId ? navigate(`/test/${setId}`) : navigate('/')}>Back to Test</button>
         <button onClick={() => navigate('/result', { state })}>Send the answers</button>
       </div>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: 24 }}>

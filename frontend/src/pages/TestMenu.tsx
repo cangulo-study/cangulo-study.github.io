@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TestMenu.css';
-import { TestItem } from '../models/Question';
+
+interface TestItem {
+  id: number;
+  name: string;
+  filename: string;
+  difficulty: string;
+}
 
 export default function TestMenu() {
   const [tests, setTests] = useState<TestItem[]>([]);
@@ -15,11 +21,9 @@ export default function TestMenu() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (/^[1-9]$/.test(e.key)) {
-        const idx = parseInt(e.key, 10) - 1;
-        if (idx >= 0 && idx < tests.length) {
-          navigate(`/test/${idx + 1}`);
-        }
+      if (/^[0-9]$/.test(e.key)) {
+        const idx = parseInt(e.key, 10);
+        navigate(`/test/${idx}`);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -34,7 +38,7 @@ export default function TestMenu() {
           <div
             key={test.id}
             className={`test-card ${test.difficulty}`}
-            onClick={() => navigate(`/test/${test.id + 1}`)}
+            onClick={() => navigate(`/test/${test.id}`)}
           >
             <h2>{test.name}</h2>
             <p>Difficulty: <b>{test.difficulty}</b></p>

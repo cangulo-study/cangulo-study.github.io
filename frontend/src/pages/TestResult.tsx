@@ -1,20 +1,20 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { TestResultState } from '../models/Question';
+import { TestReviewState } from '../models/Question';
 
 
 export default function TestResult() {
   const location = useLocation();
   const navigate = useNavigate();
-  const state = location.state as TestResultState | undefined;
+  const state = location.state as TestReviewState | undefined;
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Enter' || e.key === 'Escape') {
         navigate('/');
       } else if (e.key.toLowerCase() === 'r') {
-        if (state && state.testnumber) {
-          navigate(`/test/${state.testnumber}`);
+        if (state && state.setId) {
+          navigate(`/test/${state.setId}`);
         } else {
           navigate('/');
         }
@@ -31,11 +31,9 @@ export default function TestResult() {
 
   const { questions, answers } = state;
   const total = questions.length;
-  // Calculate score from AnsweredQuestion[]
   const score = questions.reduce((acc, q, idx) => acc + (answers[idx]?.selectedOption === q.correctOption ? 1 : 0), 0);
   const percent = total > 0 ? Math.round((score / total) * 100) : 0;
 
-  // Find mistakes
   const mistakes = questions
     .map((q, idx) => {
       const answer = answers[idx];
@@ -86,7 +84,7 @@ export default function TestResult() {
       )}
       <div style={{ marginTop: 32, display: 'flex', gap: 16 }}>
         <button onClick={() => navigate('/')}>Back to Menu</button>
-        <button onClick={() => navigate(`/test/${state.testnumber}`)}>Retry Test</button>
+        <button onClick={() => navigate(`/test/${state.setId}`)}>Retry Test</button>
       </div>
     </div>
   );

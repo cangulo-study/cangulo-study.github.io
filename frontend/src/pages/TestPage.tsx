@@ -15,9 +15,13 @@ export default function TestPage() {
       fetch('/tests/test-list.json')
         .then(res => res.json())
         .then((list) => {
-          const idx = parseInt(setId, 10) - 1;
-          if (idx >= 0 && idx < list.length) {
-            fetch(`/tests/${list[idx].filename}`)
+          const idx = parseInt(setId, 10);
+          const matchingSet = list.filter((item: { id: number }) => item.id === idx);
+          if (matchingSet.length === 0) {
+            navigate('/'); // Redirect if no matching set found
+            return;
+          } else if (matchingSet[0]) {
+            fetch(`/tests/${matchingSet[0].filename}`)
               .then((res) => res.json())
               .then((data) => {
                 setQuestions(data.questions);
