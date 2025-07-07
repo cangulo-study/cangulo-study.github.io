@@ -24,3 +24,15 @@
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 6px 18px rgba(0,0,0,0.13);
 }
+
+.test-card.easy {
+  background: #d4edda;
+}
+
+.test-card.intermediate {
+  background: #fff3cd;
+}
+
+.test-card.hard {
+  background: #f8d7da;
+}

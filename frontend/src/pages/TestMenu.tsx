@@ -8,12 +8,6 @@ interface TestItem {
   difficulty: string;
 }
 
-const difficultyColors: Record<string, string> = {
-  easy: '#d4edda',
-  intermediate: '#fff3cd',
-  hard: '#f8d7da',
-};
-
 export default function TestMenu() {
   const [tests, setTests] = useState<TestItem[]>([]);
   const navigate = useNavigate();
@@ -44,8 +38,7 @@ export default function TestMenu() {
         {tests.map((test) => (
           <div
             key={test.filename}
-            className="test-card"
-            style={{ background: difficultyColors[test.difficulty] || '#eee' }}
+            className={`test-card ${test.difficulty}`}
             onClick={() => {
               const idx = tests.findIndex(t => t.filename === test.filename);
               if (idx !== -1) navigate(`/test/${idx + 1}`);
