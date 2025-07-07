@@ -1,4 +1,3 @@
-
 export interface Question {
   id: number;
   question: string;
@@ -6,7 +5,6 @@ export interface Question {
   correctOption: string;
 }
 
-// Model for an answered question
 export interface AnsweredQuestion {
   id: number;
   selectedOption: string;
@@ -23,4 +21,11 @@ export interface TestResultState {
   answers: AnsweredQuestion[];
   score?: number;
   testnumber?: string;
+}
+
+export interface TestItem {
+  id: number;
+  name: string;
+  filename: string;
+  difficulty: string;
 }

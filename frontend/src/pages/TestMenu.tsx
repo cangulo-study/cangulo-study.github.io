@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TestMenu.css';
-
-interface TestItem {
-  name: string;
-  filename: string;
-  difficulty: string;
-}
+import { TestItem } from '../Models/Question';
 
 export default function TestMenu() {
   const [tests, setTests] = useState<TestItem[]>([]);
