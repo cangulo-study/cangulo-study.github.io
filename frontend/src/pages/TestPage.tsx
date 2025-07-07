@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { TestData, AnsweredQuestion } from '../Models/Question';
+import { AnsweredQuestion, Question } from '../Models/Question';
 
 export default function TestPage() {
   const { setId } = useParams<{ setId: string }>();
-  const [test, setTest] = useState<TestData | null>(null);
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [answers, setAnswers] = useState<AnsweredQuestion[]>([]);
@@ -19,15 +19,17 @@ export default function TestPage() {
           if (idx >= 0 && idx < list.length) {
             fetch(`/tests/${list[idx].filename}`)
               .then((res) => res.json())
-              .then(setTest);
+              .then((data) => {
+                setQuestions(data.questions);
+              });
           }
         });
     }
   }, [setId]);
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if (!test || !test.questions[current]) return;
-    const q = test.questions[current];
+    if (!questions[current]) return;
+    const q = questions[current];
 
     if (e.key === 'Escape') {
       navigate('/');
@@ -43,11 +45,11 @@ export default function TestPage() {
         };
         return copy;
       });
-      if (current + 1 < test.questions.length) {
+      if (current + 1 < questions.length) {
         setCurrent((c) => c + 1);
         setSelected(null);
       } else {
-        navigate('/review', { state: { questions: test.questions, answers, setId } });
+        navigate('/review', { state: { questions, answers, setId } });
       }
     } else if (e.key.toLowerCase() === 'r') {
       setAnswers((prev) => {
@@ -65,11 +67,11 @@ export default function TestPage() {
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [test, current, navigate]);
+  }, [questions, current, navigate]);
 
-  if (!test) return <div>Loading...</div>;
+  if (!questions) return <div>Loading...</div>;
 
-  const q = test.questions[current];
+  const q = questions[current];
 
   return (
     <div style={{ maxWidth: 600, margin: '2rem auto', padding: 24, background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', position: 'relative' }}>
@@ -84,7 +86,7 @@ export default function TestPage() {
           Test Set #{setId}
         </div>
       )}
-      <h2 style={{ marginTop: 40 }}>Question {current + 1} of {test.questions.length}</h2>
+      <h2 style={{ marginTop: 40 }}>Question {current + 1} of {questions.length}</h2>
       {q && (
         <>
           <p style={{ fontWeight: 500 }}>{q.question}</p>
@@ -114,11 +116,11 @@ export default function TestPage() {
                     };
                     return copy;
                   });
-                  if (current + 1 < test.questions.length) {
+                  if (current + 1 < questions.length) {
                     setCurrent((c) => c + 1);
                     setSelected(null);
                   } else {
-                    navigate('/review', { state: { questions: test.questions, answers, setId } });
+                    navigate('/review', { state: { questions, answers, setId } });
                   }
                 }}
                 disabled={selected !== null}
