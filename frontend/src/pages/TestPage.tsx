@@ -87,7 +87,7 @@ export default function TestPage() {
       </button>
       {setId && (
         <div style={{ position: 'absolute', right: 24, top: 24, fontWeight: 600, fontSize: 16, color: '#555' }}>
-          Test Set #{setId}
+          Test Set #{parseInt(setId) + 1}
         </div>
       )}
       <h2 style={{ marginTop: 40 }}>Question {current + 1} of {questions.length}</h2>
