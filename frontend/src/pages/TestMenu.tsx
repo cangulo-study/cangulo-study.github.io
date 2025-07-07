@@ -32,12 +32,9 @@ export default function TestMenu() {
       <div className="test-cards">
         {tests.map((test) => (
           <div
-            key={test.filename}
+            key={test.id}
             className={`test-card ${test.difficulty}`}
-            onClick={() => {
-              const idx = tests.findIndex(t => t.filename === test.filename);
-              if (idx !== -1) navigate(`/test/${idx + 1}`);
-            }}
+            onClick={() => navigate(`/test/${test.id + 1}`)}
           >
             <h2>{test.name}</h2>
             <p>Difficulty: <b>{test.difficulty}</b></p>
