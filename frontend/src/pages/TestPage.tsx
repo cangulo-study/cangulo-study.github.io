@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { TestData, AnsweredQuestion } from '../Models/Question';
 
 export default function TestPage() {
-  const { testnumber } = useParams<{ testnumber: string }>();
+  const { setId } = useParams<{ setId: string }>();
   const [test, setTest] = useState<TestData | null>(null);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -11,11 +11,11 @@ export default function TestPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (testnumber) {
+    if (setId) {
       fetch('/tests/test-list.json')
         .then(res => res.json())
         .then((list) => {
-          const idx = parseInt(testnumber, 10) - 1;
+          const idx = parseInt(setId, 10) - 1;
           if (idx >= 0 && idx < list.length) {
             fetch(`/tests/${list[idx].filename}`)
               .then((res) => res.json())
@@ -23,7 +23,7 @@ export default function TestPage() {
           }
         });
     }
-  }, [testnumber]);
+  }, [setId]);
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (!test || !test.questions[current]) return;
@@ -47,7 +47,7 @@ export default function TestPage() {
         setCurrent((c) => c + 1);
         setSelected(null);
       } else {
-        navigate('/review', { state: { questions: test.questions, answers, testnumber } });
+        navigate('/review', { state: { questions: test.questions, answers, setId } });
       }
     } else if (e.key.toLowerCase() === 'r') {
       setAnswers((prev) => {
@@ -79,9 +79,9 @@ export default function TestPage() {
       >
         ← Back to Test List
       </button>
-      {testnumber && (
+      {setId && (
         <div style={{ position: 'absolute', right: 24, top: 24, fontWeight: 600, fontSize: 16, color: '#555' }}>
-          Test Set #{testnumber}
+          Test Set #{setId}
         </div>
       )}
       <h2 style={{ marginTop: 40 }}>Question {current + 1} of {test.questions.length}</h2>
@@ -118,7 +118,7 @@ export default function TestPage() {
                     setCurrent((c) => c + 1);
                     setSelected(null);
                   } else {
-                    navigate('/review', { state: { questions: test.questions, answers, testnumber } });
+                    navigate('/review', { state: { questions: test.questions, answers, setId } });
                   }
                 }}
                 disabled={selected !== null}

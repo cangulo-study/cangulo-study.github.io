@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<TestMenu />} />
-        <Route path="/test/:testnumber" element={<TestPage />} />
+        <Route path="/test/:setId" element={<TestPage />} />
         <Route path="/result" element={<TestResult />} />
         <Route path="/review" element={<TestReview />} />
       </Routes>
